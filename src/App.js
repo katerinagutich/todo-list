@@ -12,9 +12,9 @@ function App() {
     return (
       <div className="wrapper">
           <h1>ToDo List: </h1>
-          <ToDoList todos={todos}/>
+          <ToDoList list={todos}/>
       </div>
   )
 }
 
-export default App;
+export default App
