@@ -20,13 +20,17 @@ function ToDoItem({item, index, onSelect, onDelete}) {
                 &nbsp;
                 {item.title}
             </span>
-            <button className="rm" onClick={onDelete.bind(null, item.id)}>&times;</button>
+            <button className="rm" onClick={() => onDelete(item.id)}>&times;</button>
         </li>
     );
 }
 
 ToDoItem.propTypes = {
-    item: PropTypes.object.isRequired,
+    item: PropTypes.shape({
+        id: PropTypes.number,
+        completed: PropTypes.bool,
+        title: PropTypes.string
+    }),
     index: PropTypes.number,
     onSelect: PropTypes.func.isRequired,
     onDelete: PropTypes.func.isRequired
