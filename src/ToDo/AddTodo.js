@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
-function useInputValue(defaultValue = '') {
-    const [value, setValue] = useState(defaultValue);
-    return {
+function AddTodo({onCreate}) {
+
+    const [value, setValue] = useState('');
+
+    const input = {
         bind: {
             value,
             onChange: event => setValue(event.target.value)
@@ -11,15 +13,9 @@ function useInputValue(defaultValue = '') {
         clear: () => setValue(''),
         value: () => value
     }
-}
 
-function AddTodo({onCreate}) {
-
-    const input = useInputValue('');
-
-    function submitHandler(event) {
+    const submitHandler = event => {
         event.preventDefault();
-
         if (input.value().trim()) {
             onCreate(input.bind.value);
             input.clear();
