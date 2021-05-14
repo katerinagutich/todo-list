@@ -13,7 +13,7 @@ function App() {
     )
 
     const toggleTodo = id => {
-        let todosWithUpdatedStatus = todos.map(todo => {
+        const todosWithUpdatedStatus = todos.map(todo => {
             if (todo.id === id) {
                 todo.completed = !todo.completed;
             }
@@ -23,12 +23,12 @@ function App() {
     }
 
     const removeTodo = id => {
-        let remainedTodos = todos.filter(todo => todo.id !== id);
+        const remainedTodos = todos.filter(todo => todo.id !== id);
         setTodos(remainedTodos);
     }
 
     const addTodo = title => {
-        let expandedTodos = todos.concat(
+        const expandedTodos = todos.concat(
             {
                 title,
                 id: Date.now(),

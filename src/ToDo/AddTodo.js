@@ -5,26 +5,17 @@ function AddTodo({onCreate}) {
 
     const [value, setValue] = useState('');
 
-    const input = {
-        bind: {
-            value,
-            onChange: event => setValue(event.target.value)
-        },
-        clear: () => setValue(''),
-        value: () => value
-    }
-
     const submitHandler = event => {
         event.preventDefault();
-        if (input.value().trim()) {
-            onCreate(input.bind.value);
-            input.clear();
+        if (value.trim()) {
+            onCreate(value);
+            setValue('');
         }
     }
 
     return (
         <form onSubmit={submitHandler}>
-            <input {...input.bind} />
+            <input value={value} onChange={event => setValue(event.target.value)} />
             <button type="submit">ADD</button>
         </form>
     )
