@@ -1,9 +1,10 @@
-import React from 'react'
-import ToDoList from './ToDo/ToDoList'
+import React from 'react';
+import ToDoList from './ToDo/ToDoList';
 import Context from "./context";
 import AddTodo from "./ToDo/AddTodo";
 
 function App() {
+
     const [todos, setTodos] = React.useState(
         [
             {id: 1, completed: false, title: "Buy milk"},
@@ -12,31 +13,30 @@ function App() {
         ]
     )
 
-    function toggleTodo(id) {
-        setTodos(
-            todos.map(todo => {
-                if (todo.id === id) {
-                    todo.completed = !todo.completed
-                }
-                return todo
-            })
-        )
+    const toggleTodo = id => {
+        let todosWithUpdatedStatus = todos.map(todo => {
+            if (todo.id === id) {
+                todo.completed = !todo.completed;
+            }
+            return todo;
+        });
+        setTodos(todosWithUpdatedStatus);
     }
 
-    function removeTodo(id) {
-        setTodos(todos.filter(todo => todo.id !== id))
+    const removeTodo = id => {
+        let remainedTodos = todos.filter(todo => todo.id !== id);
+        setTodos(remainedTodos);
     }
 
-    function addTodo(title) {
-        setTodos(
-            todos.concat([
-                {
-                    title,
-                    id: Date.now(),
-                    completed: false
-                }
-            ])
-        )
+    const addTodo = title => {
+        let expandedTodos = todos.concat(
+            {
+                title,
+                id: Date.now(),
+                completed: false
+            }
+        );
+        setTodos(expandedTodos);
     }
 
     return (
@@ -50,4 +50,4 @@ function App() {
     )
 }
 
-export default App
+export default App;

@@ -1,5 +1,5 @@
-import React, {useContext} from 'react'
-import PropTypes from 'prop-types'
+import React, {useContext} from 'react';
+import PropTypes from 'prop-types';
 import Context from "../context";
 
 const styles = {
@@ -19,8 +19,8 @@ const styles = {
 
 function ToDoItem({item, index, onSelect}) {
 
-    const {removeTodo} = useContext(Context)
-    const classes = []
+    const {removeTodo} = useContext(Context);
+    const classes = [];
     if (item.completed) {
         classes.push('done')
     }
@@ -40,7 +40,7 @@ function ToDoItem({item, index, onSelect}) {
             </span>
             <button className="rm" onClick={removeTodo.bind(null, item.id)}>&times;</button>
         </li>
-    )
+    );
 }
 
 ToDoItem.propTypes = {
@@ -48,4 +48,4 @@ ToDoItem.propTypes = {
     index: PropTypes.number,
     onSelect: PropTypes.func.isRequired
 }
-export default ToDoItem
+export default ToDoItem;

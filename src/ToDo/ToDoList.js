@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 import ToDoItem from './ToDoItem';
 
 const styles = {
@@ -24,7 +24,7 @@ function ToDoList(props) {
                 )
             })}
         </ul>
-    )
+    );
 }
 
 ToDoList.propTypes = {
@@ -32,4 +32,4 @@ ToDoList.propTypes = {
     onToggle: PropTypes.func.isRequired
 }
 
-export default ToDoList
+export default ToDoList;
