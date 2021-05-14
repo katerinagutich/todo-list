@@ -1,11 +1,8 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Context from "../context";
 
+function ToDoItem({item, index, onSelect, onDelete}) {
 
-function ToDoItem({item, index, onSelect}) {
-
-    const {removeTodo} = useContext(Context);
     const classes = [];
     if (item.completed) {
         classes.push('done')
@@ -23,7 +20,7 @@ function ToDoItem({item, index, onSelect}) {
                 &nbsp;
                 {item.title}
             </span>
-            <button className="rm" onClick={removeTodo.bind(null, item.id)}>&times;</button>
+            <button className="rm" onClick={onDelete.bind(null, item.id)}>&times;</button>
         </li>
     );
 }
@@ -31,6 +28,7 @@ function ToDoItem({item, index, onSelect}) {
 ToDoItem.propTypes = {
     item: PropTypes.object.isRequired,
     index: PropTypes.number,
-    onSelect: PropTypes.func.isRequired
+    onSelect: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired
 }
 export default ToDoItem;

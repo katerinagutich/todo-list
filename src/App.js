@@ -1,6 +1,5 @@
 import React from 'react';
 import ToDoList from './ToDo/ToDoList';
-import Context from "./context";
 import AddTodo from "./ToDo/AddTodo";
 
 function App() {
@@ -40,13 +39,11 @@ function App() {
     }
 
     return (
-        <Context.Provider value={{removeTodo}}>
-            <div className="wrapper">
-                <h1>ToDo List: </h1>
-                <AddTodo onCreate={addTodo}/>
-                {todos.length ? <ToDoList list={todos} onToggle={toggleTodo}/> : <p>Nothing to do</p>}
-            </div>
-        </Context.Provider>
+        <div className="wrapper">
+            <h1>ToDo List: </h1>
+            <AddTodo onCreate={addTodo}/>
+            {todos.length ? <ToDoList onRemove={removeTodo} list={todos} onToggle={toggleTodo}/> : <p>Nothing to do</p>}
+        </div>
     )
 }
 

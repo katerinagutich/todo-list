@@ -20,6 +20,7 @@ function ToDoList(props) {
                         key={todo.id}
                         index={idx}
                         onSelect={props.onToggle}
+                        onDelete={props.onRemove}
                     />
                 )
             })}
@@ -29,7 +30,8 @@ function ToDoList(props) {
 
 ToDoList.propTypes = {
     list: PropTypes.arrayOf(PropTypes.object).isRequired,
-    onToggle: PropTypes.func.isRequired
+    onToggle: PropTypes.func.isRequired,
+    onRemove: PropTypes.func.isRequired
 }
 
 export default ToDoList;
