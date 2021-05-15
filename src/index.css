@@ -1,18 +1,72 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font: bold 20px 'Indie Flower', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(32,73,105,1);
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+h1 {
+  margin: 0;
+  font: bold 3em 'Indie Flower', cursive;
+}
 .wrapper {
-  padding-top: 5rem;
-  margin: 0 auto;
-  width: 500px;
+  padding: 1rem;
+  margin: 5rem auto;
+  width: 600px;
+  border-radius: 15px;
+  background-color: rgba(30,227,207,1);
+  box-shadow: 5px 5px 15px #000;
+}
+.rm {
+  background: rgba(234,112,112,1);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+}
+.rm:hover {
+  cursor: pointer;
+  background: rgb(219, 102, 102);
+}
+.done {
+  text-decoration: line-through;
+}
+form {
+  margin-bottom: 1rem;
+}
+form input {
+  width: 250px;
+  height: 30px;
+  box-sizing: border-box;
+}
+form button {
+  background-color: rgba(32,73,105,1);
+  color: #fff;
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+  margin: 0;
+  box-sizing: border-box;
+}
+form button:hover {
+  cursor: pointer;
+  background-color: rgb(43, 91, 135);
+  color: #fff;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem;
+  border-radius: 10px;
+  margin-bottom: .5rem;
+  background-color: rgba(255,247,247,1);
+  box-shadow: 1px 1px 2px #000;
+}
+input {
+  margin-right: 1rem;
 }
