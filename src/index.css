@@ -11,7 +11,7 @@ code {
 }
 h1 {
   margin: 0;
-  font: bold 3em 'Indie Flower', cursive;
+  font: bold 3rem 'Indie Flower', cursive;
 }
 .wrapper {
   padding: 1rem;
@@ -39,7 +39,7 @@ form {
   margin-bottom: 1rem;
 }
 form input {
-  width: 250px;
+  width: 70%;
   height: 30px;
   box-sizing: border-box;
 }
@@ -47,7 +47,7 @@ form button {
   background-color: rgba(32,73,105,1);
   color: #fff;
   border-radius: 5px;
-  width: 100px;
+  width: 20%;
   height: 30px;
   margin: 0;
   box-sizing: border-box;
@@ -69,4 +69,9 @@ li {
 }
 input {
   margin-right: 1rem;
+}
+@media (max-width: 700px) {
+  .wrapper {
+    width: 90%;
+  }
 }
